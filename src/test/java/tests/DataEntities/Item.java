@@ -4,16 +4,14 @@ import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonPro
 
 public class Item {
 
-    //TODO: change names to more identifiable
-
     private int productId;
-    private String id;
+    private String operationId;
     private String cookie;
     private boolean flag;
 
     public Item() {
         this.productId = 0;
-        this.id = "0";
+        this.operationId = "0";
         this.cookie = "abcde";
         this.flag = false;
     }
@@ -24,16 +22,18 @@ public class Item {
     }
 
     @JsonProperty("prod_id")
-    public void setProd_id(int prod_id) {
-        this.productId = prod_id;
+    public void setProd_id(int productId) {
+        this.productId = productId;
     }
 
+    @JsonProperty("id")
     public String getId() {
-        return id;
+        return operationId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    @JsonProperty("id")
+    public void setId(String operationId) {
+        this.operationId = operationId;
     }
 
     public String getCookie() {

@@ -3,7 +3,6 @@ package tests.Requests;
 import io.cucumber.datatable.dependency.com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.Test;
 import tests.DataEntities.Cart;
 import tests.TestsContext;
 import tests.TestsFixture;
@@ -12,7 +11,6 @@ import tests.Utils.EndPoints;
 import tests.Utils.RestUtils;
 
 import java.io.IOException;
-
 import static io.restassured.RestAssured.given;
 
 public class CartRequests {

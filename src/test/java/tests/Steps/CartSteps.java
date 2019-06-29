@@ -9,24 +9,27 @@ import java.io.IOException;
 
 public class CartSteps {
 
+    CartRequests cartRequest;
+    Cart cart;
+
     @When("Delete product from cart")
     public void delete_product_from_cart() {
-        CartRequests cartRequest = new CartRequests();
+        cartRequest = new CartRequests();
         cartRequest.deleteItemFromCart();
     }
 
     @Then("Product with id {int} is in cart")
     public void product_is_in_cart(int productId) throws IOException {
-        CartRequests cartRequest = new CartRequests();
-        Cart cart = cartRequest.getCart();
+        cartRequest = new CartRequests();
+        cart = cartRequest.getCart();
         Assertions.assertEquals(1, cart.getCount());
         Assertions.assertEquals(productId, cart.getItems().get(0).getProd_id());
     }
 
     @Then("Cart is empty")
     public void cart_is_empty() throws IOException {
-        CartRequests cartRequest = new CartRequests();
-        Cart cart = cartRequest.getCart();
+        cartRequest = new CartRequests();
+        cart = cartRequest.getCart();
         Assertions.assertEquals(0, cart.getCount());
         Assertions.assertEquals(0, cart.getItems().size());
     }
