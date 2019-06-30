@@ -12,7 +12,7 @@ public final class TestsFixture {
 
     private static TestsContext testContext = null;
 
-    public static synchronized TestsContext getTestContext() {
+    public static TestsContext getTestContext() {
         if (testContext == null) {
             throw new IllegalArgumentException("Initialize test context!");
         }
@@ -32,6 +32,6 @@ public final class TestsFixture {
     public void tearDown() {
         RestAssured.baseURI = RestAssured.DEFAULT_URI;
         RestAssured.basePath = RestAssured.DEFAULT_PATH;
-//        testContext = null;
+        testContext = null;
     }
 }

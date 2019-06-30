@@ -2,19 +2,12 @@ package tests.DataEntities;
 
 import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Item {
+public class Product {
 
     private int productId;
     private String operationId;
     private String cookie;
     private boolean flag;
-
-    public Item() {
-        this.productId = 0;
-        this.operationId = "0";
-        this.cookie = "abcde";
-        this.flag = false;
-    }
 
     @JsonProperty("prod_id")
     public int getProd_id() {

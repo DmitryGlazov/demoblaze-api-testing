@@ -9,13 +9,13 @@ import java.io.IOException;
 
 public class CartSteps {
 
-    CartRequests cartRequest;
-    Cart cart;
+    private CartRequests cartRequest;
+    private Cart cart;
 
     @When("Delete product from cart")
     public void delete_product_from_cart() {
         cartRequest = new CartRequests();
-        cartRequest.deleteItemFromCart();
+        cartRequest.deleteProductFromCart();
     }
 
     @Then("Product with id {int} is in cart")

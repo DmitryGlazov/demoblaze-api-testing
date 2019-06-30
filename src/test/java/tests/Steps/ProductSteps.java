@@ -1,15 +1,15 @@
 package tests.Steps;
 
 import cucumber.api.java.en.When;
-import tests.Requests.ItemRequests;
+import tests.Requests.ProductRequests;
 
 public class ProductSteps {
 
-    ItemRequests itemRequest;
+    private ProductRequests productRequest;
 
     @When("Add product with id {int} to cart")
     public void add_product_to_cart(int productId) {
-        itemRequest = new ItemRequests();
-        itemRequest.addItemToCart(productId);
+        productRequest = new ProductRequests();
+        productRequest.addItemToCart(productId);
     }
 }
