@@ -29,3 +29,8 @@ OR
 ```
 docker run dmitryglazov/demoblazeapitesting -DURI=<target URI> -DCucumber.options="--name 'scenario name here'"
 ```
+
+Example:  
+```
+mvn test -Dtest=Runner -DURI=https://api.demoblaze.com -DCucumber.options="--name 'User should be able to remove product from cart'"
+```
