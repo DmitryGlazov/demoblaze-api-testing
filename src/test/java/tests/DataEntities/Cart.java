@@ -6,8 +6,6 @@ import java.util.ArrayList;
 public class Cart {
 
     private ArrayList<Product> items;
-    private int count;
-    private int scannedCount;
 
     @JsonProperty("Items")
     public void setItems(ArrayList<Product> Items) {
@@ -18,21 +16,7 @@ public class Cart {
         return items;
     }
 
-    @JsonProperty("Count")
-    public void setCount(int count) {
-        this.count = count;
-    }
-
     public int getCount() {
-        return count;
-    }
-
-    @JsonProperty("ScannedCount")
-    public void setScannedCount(int scannedCount) {
-        this.scannedCount = scannedCount;
-    }
-
-    public int getScannedCount() {
-        return scannedCount;
+        return getItems().size();
     }
 }

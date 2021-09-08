@@ -1,6 +1,7 @@
 package tests.Requests;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import tests.DataEntities.Cart;
 import tests.TestsContext;
@@ -21,7 +22,7 @@ public class CartRequests {
         String cookie = testsContext.getCookie();
         String reqBody = "{\"cookie\":" + "\"" + cookie + "\"" + ",\"flag\":false}";
 
-        Response res = given().body(reqBody).post();
+        Response res = given().contentType(ContentType.JSON).body(reqBody).post();
         String body = res.getBody().asString();
 
         Cart cart = RestUtils.getObjectMapper().readValue(body, Cart.class);
@@ -34,6 +35,6 @@ public class CartRequests {
         String id = testsContext.getOperationId();
         String reqBody = "{\"id\":" + "\"" + id + "\"}";
 
-        given().body(reqBody).post();
+        given().contentType(ContentType.JSON).body(reqBody).post();
     }
 }

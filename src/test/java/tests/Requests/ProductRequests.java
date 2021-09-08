@@ -1,6 +1,7 @@
 package tests.Requests;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import org.apache.commons.lang3.RandomStringUtils;
 import tests.DataEntities.Product;
 import tests.TestsContext;
@@ -23,6 +24,6 @@ public class ProductRequests {
         item.setId(testsContext.getOperationId());
         item.setProd_id(productId);
 
-        given().body(item).post();
+        given().contentType(ContentType.JSON).body(item).post();
     }
 }

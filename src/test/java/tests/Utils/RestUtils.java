@@ -3,14 +3,12 @@ package tests.Utils;
 import io.cucumber.datatable.dependency.com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
 import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.http.ContentType;
 import io.restassured.specification.ResponseSpecification;
 
 public class RestUtils {
 
     public static void setRequestSpec(String baseUri) {
         RestAssured.baseURI = baseUri;
-        RestAssured.given().contentType(ContentType.JSON);
     }
 
     public static void setResponseSpec() {
